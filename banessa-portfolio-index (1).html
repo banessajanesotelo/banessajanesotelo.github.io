@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Banessa Jane Sotelo — Virtual Assistant, Customer Service and Administrative Support portfolio.">
+  <title>Banessa Jane Sotelo | Virtual Assistant Portfolio</title>
+  <style>
+    :root{
+      --ink:#292522;
+      --muted:#6f665f;
+      --soft:#f3eee8;
+      --paper:#fffdf9;
+      --line:#dfd5cc;
+      --accent:#9a7463;
+      --accent-dark:#775848;
+      --shadow:0 18px 45px rgba(63,48,39,.08);
+      --radius:22px;
+      --max:1080px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:var(--paper);
+      font-family:Arial, Helvetica, sans-serif;
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .container{width:min(var(--max),92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;
+      background:rgba(255,253,249,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(223,213,204,.8);
+    }
+    nav{
+      min-height:72px;display:flex;align-items:center;
+      justify-content:space-between;gap:20px;
+    }
+    .brand{
+      text-decoration:none;font-family:Georgia,serif;
+      font-size:22px;font-weight:700;
+    }
+    .brand span{color:var(--accent)}
+    .navlinks{display:flex;gap:22px;align-items:center}
+    .navlinks a{text-decoration:none;font-size:14px;color:var(--muted)}
+    .navlinks a:hover{color:var(--accent-dark)}
+    .button{
+      display:inline-block;text-decoration:none;
+      padding:11px 18px;border:1px solid var(--ink);
+      border-radius:999px;font-size:14px;
+      background:transparent;
+    }
+    .button:hover{background:var(--ink);color:white}
+    .hero{padding:88px 0 70px;background:var(--soft)}
+    .hero-grid{
+      display:grid;grid-template-columns:1.45fr .75fr;
+      gap:55px;align-items:center;
+    }
+    .eyebrow{
+      text-transform:uppercase;letter-spacing:2px;
+      font-size:12px;color:var(--accent-dark);font-weight:700;
+    }
+    h1{
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(48px,7vw,78px);line-height:.98;
+      font-weight:500;margin:15px 0 22px;
+      max-width:760px;
+    }
+    .hero p{font-size:18px;color:var(--muted);max-width:690px;margin:0 0 28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .primary{background:var(--ink);color:#fff;border-color:var(--ink)}
+    .primary:hover{background:var(--accent-dark);border-color:var(--accent-dark)}
+    .photo-wrap{display:flex;justify-content:center}
+    .photo{
+      width:260px;height:310px;border-radius:28px;
+      object-fit:cover;display:block;
+      background:#e7ddd4;border:8px solid #fff;
+      box-shadow:var(--shadow);
+    }
+    .photo-note{
+      text-align:center;color:var(--muted);font-size:12px;margin-top:10px;
+    }
+    section{padding:82px 0}
+    .section-head{
+      display:grid;grid-template-columns:1fr 1fr;gap:40px;
+      align-items:end;margin-bottom:34px;
+    }
+    .section-number{
+      text-transform:uppercase;letter-spacing:2px;
+      font-size:12px;color:var(--accent-dark);font-weight:700;
+    }
+    h2{
+      font-family:Georgia,serif;font-weight:500;
+      font-size:clamp(34px,4.5vw,54px);line-height:1.05;margin:8px 0 0;
+    }
+    .section-head p{color:var(--muted);margin:0}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .card{
+      background:#fff;border:1px solid var(--line);
+      border-radius:var(--radius);padding:28px;
+      box-shadow:0 8px 25px rgba(63,48,39,.04);
+    }
+    .card h3{font-family:Georgia,serif;font-size:24px;font-weight:500;margin:0 0 10px}
+    .muted{color:var(--muted)}
+    .skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+    .pill{
+      border:1px solid var(--line);background:var(--soft);
+      border-radius:999px;padding:7px 11px;font-size:13px;
+    }
+    .experience{display:grid;gap:18px}
+    .role{display:grid;grid-template-columns:210px 1fr;gap:30px}
+    .role-date{font-size:13px;color:var(--accent-dark);font-weight:700;text-transform:uppercase;letter-spacing:1px}
+    .role h3{font-family:Georgia,serif;font-size:25px;font-weight:500;margin:0 0 5px}
+    .role-company{color:var(--muted);margin-bottom:12px}
+    .role ul{margin:0;padding-left:19px;color:var(--muted)}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service h3{font-size:18px;margin:0 0 8px}
+    .service p{font-size:14px;color:var(--muted);margin:0}
+    .projects{
+      display:grid;grid-template-columns:1.35fr .85fr;gap:18px;
+    }
+    .project{
+      background:#fff;border:1px solid var(--line);
+      border-radius:var(--radius);padding:24px;
+      box-shadow:0 8px 25px rgba(63,48,39,.04);
+    }
+    .project-large{grid-row:span 2}
+    .tag{
+      display:inline-block;text-transform:uppercase;
+      letter-spacing:1.2px;font-size:10px;font-weight:700;
+      color:var(--accent-dark);background:var(--soft);
+      padding:6px 9px;border-radius:999px;
+    }
+    .project h3{font-family:Georgia,serif;font-size:26px;font-weight:500;margin:15px 0 5px}
+    .project p{font-size:14px;color:var(--muted);margin:0 0 17px}
+    .mockup{
+      background:#f0e9e2;border:1px solid #ddd0c5;
+      border-radius:16px;padding:14px;min-height:150px;
+    }
+    .mock-title{font-size:11px;font-weight:700;color:#695b52;margin-bottom:9px}
+    .ticket,.row{
+      background:#fff;border:1px solid #e3d9d1;border-radius:9px;
+      padding:9px;margin-bottom:7px;font-size:11px;
+    }
+    .ticket:last-child,.row:last-child{margin-bottom:0}
+    .ticket strong{display:block}
+    .ticket small{display:block;color:#897b72;margin-top:3px}
+    .status{
+      display:inline-block;margin-top:5px;padding:3px 6px;
+      border-radius:8px;background:#eee2d8;font-size:9px;
+    }
+    .table-head,.table-row{
+      display:grid;grid-template-columns:1.4fr .7fr .6fr;gap:7px;
+      font-size:10px;padding:7px 0;
+    }
+    .table-head{font-weight:700;border-bottom:1px solid #ddd0c5}
+    .table-row{border-bottom:1px solid #eee6df}
+    .table-row:last-child{border-bottom:0}
+    .appointment{
+      display:grid;grid-template-columns:1fr 1fr;gap:8px;
+      background:#fff;border:1px solid #e3d9d1;border-radius:9px;padding:10px;font-size:10px;
+    }
+    .appointment strong{display:block;color:#695b52}
+    .disclaimer{
+      margin-top:20px;padding:13px 15px;border-left:3px solid var(--accent);
+      background:var(--soft);font-size:13px;color:var(--muted);
+    }
+    .education{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .contact{background:var(--ink);color:#fff}
+    .contact .section-number{color:#d9b9a8}
+    .contact .section-head p{color:#d8cfca}
+    .contact-card{
+      display:grid;grid-template-columns:1fr 1fr;gap:18px;
+    }
+    .contact-item{
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:18px;padding:22px;
+    }
+    .contact-item span{display:block;color:#cfc4bd;font-size:12px;text-transform:uppercase;letter-spacing:1px}
+    .contact-item a{text-decoration:none;word-break:break-word}
+    footer{padding:25px 0;color:var(--muted);font-size:12px;text-align:center}
+    @media(max-width:800px){
+      .navlinks{display:none}
+      .hero-grid,.section-head,.about-grid,.role,.services,.projects,.education,.contact-card{grid-template-columns:1fr}
+      .photo{width:220px;height:260px}
+      .hero{padding-top:55px}
+      .role{gap:8px}
+      .project-large{grid-row:auto}
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <nav>
+      <a class="brand" href="#top">Banessa <span>Jane</span></a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="button" href="#contact">Let's work together</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Virtual Assistant · Customer Service · Administrative Support</div>
+        <h1>Reliable support that keeps the details organized.</h1>
+        <p>
+          I'm Banessa Jane Sotelo, a hospitality and customer-service professional
+          transitioning my experience into remote Virtual Assistant work. I bring
+          clear communication, organization, multitasking, and a service-focused approach
+          to customer support and administrative tasks.
+        </p>
+        <div class="actions">
+          <a class="button primary" href="#portfolio">View sample work</a>
+          <a class="button" href="#contact">Contact me</a>
+        </div>
+      </div>
+
+      <div class="photo-wrap">
+        <div>
+          <img class="photo" src="headshot.jpg" alt="Banessa Jane Sotelo">
+          <div class="photo-note">Virtual Assistant Portfolio</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-number">01 · About</div>
+          <h2>Service-minded, organized, and ready for remote work.</h2>
+        </div>
+        <p>
+          My background in front-desk and hospitality work has developed practical
+          skills that transfer well to customer service and Virtual Assistant roles.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="card">
+          <h3>What I bring</h3>
+          <p class="muted">
+            I am comfortable handling customer questions, organizing information,
+            communicating clearly, managing multiple priorities, and keeping routine
+            tasks moving accurately.
+          </p>
+          <div class="skills">
+            <span class="pill">Customer Service</span>
+            <span class="pill">Administrative Support</span>
+            <span class="pill">Data Entry</span>
+            <span class="pill">Email Communication</span>
+            <span class="pill">File Organization</span>
+            <span class="pill">Scheduling</span>
+            <span class="pill">Microsoft Office</span>
+            <span class="pill">Google Workspace</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Work approach</h3>
+          <p class="muted">
+            I focus on understanding the request first, keeping information organized,
+            communicating professionally, and following through on the next action.
+            My goal is to make day-to-day support easier for both clients and customers.
+          </p>
+          <p class="muted">
+            <strong>Current direction:</strong> remote Virtual Assistant, customer service,
+            administrative support, and e-commerce support opportunities.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-number">02 · Experience</div>
+          <h2>Transferable experience from hospitality and customer service.</h2>
+        </div>
+        <p>
+          Experience is presented in terms of transferable responsibilities without
+          adding duties that were not performed.
+        </p>
+      </div>
+
+      <div class="experience">
+        <div class="card role">
+          <div>
+            <div class="role-date">Front Desk Experience</div>
+          </div>
+          <div>
+            <h3>Front Desk & Customer Service Support</h3>
+            <div class="role-company">Hospitality / Guest Services</div>
+            <ul>
+              <li>Handled guest requests and questions with professional, service-focused communication.</li>
+              <li>Managed multiple front-desk priorities while maintaining organized records and accurate information.</li>
+              <li>Coordinated routine guest needs and communicated relevant details to the appropriate team members.</li>
+              <li>Maintained a professional customer experience during busy periods and changing requests.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card role">
+          <div>
+            <div class="role-date">Hospitality Background</div>
+          </div>
+          <div>
+            <h3>Hospitality Operations Support</h3>
+            <div class="role-company">Customer-facing operations</div>
+            <ul>
+              <li>Supported day-to-day service operations through organization, communication, and follow-through.</li>
+              <li>Responded to customer needs and helped resolve routine questions in a timely manner.</li>
+              <li>Worked across multiple tasks while maintaining attention to details that affected the customer experience.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-number">03 · Services</div>
+          <h2>Practical support for everyday business tasks.</h2>
+        </div>
+        <p>Services are based on skills and transferable experience relevant to entry-level remote support work.</p>
+      </div>
+
+      <div class="services">
+        <div class="card service">
+          <h3>Customer Support</h3>
+          <p>Written customer communication, basic inquiry handling, information organization, and follow-up support.</p>
+        </div>
+        <div class="card service">
+          <h3>Administrative Support</h3>
+          <p>Data entry, document organization, scheduling support, record keeping, and routine administrative tasks.</p>
+        </div>
+        <div class="card service">
+          <h3>E-Commerce Support</h3>
+          <p>Product information organization, listing support, order-related information handling, and customer-service workflows.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="portfolio" style="background:var(--soft)">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-number">04 · Portfolio Projects</div>
+          <h2>Sample work designed to show how I think.</h2>
+        </div>
+        <p>
+          These are portfolio mock samples created to demonstrate practical workflows.
+          They are not client work.
+        </p>
+      </div>
+
+      <div class="projects">
+        <article class="project project-large">
+          <span class="tag">Mock sample · Customer Support</span>
+          <h3>Guest Support Inbox</h3>
+          <p>A sample support workflow showing how incoming questions can be categorized, answered, escalated, and tracked to resolution.</p>
+
+          <div class="mockup">
+            <div class="mock-title">GUEST SUPPORT INBOX · 4 TICKETS</div>
+            <div class="ticket">
+              <strong>Late check-in request</strong>
+              <small>Guest needs arrival assistance and check-in information.</small>
+              <span class="status">Priority</span>
+            </div>
+            <div class="ticket">
+              <strong>Reservation question</strong>
+              <small>Guest asking about booking details and available options.</small>
+              <span class="status">Open</span>
+            </div>
+            <div class="ticket">
+              <strong>Special request</strong>
+              <small>Request needs confirmation from the operations team.</small>
+              <span class="status">Escalated</span>
+            </div>
+            <div class="ticket">
+              <strong>General inquiry</strong>
+              <small>Information provided and conversation ready to close.</small>
+              <span class="status">Resolved</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="tag">Mock sample · E-Commerce</span>
+          <h3>Product Listing Sheet</h3>
+          <p>Structured product information for consistent online-store listings.</p>
+          <div class="mockup">
+            <div class="mock-title">PRODUCT LISTING</div>
+            <div class="table-head"><span>Product</span><span>Price</span><span>Stock</span></div>
+            <div class="table-row"><span>Travel Tote</span><span>$28</span><span>24</span></div>
+            <div class="table-row"><span>Desk Organizer</span><span>$18</span><span>12</span></div>
+            <div class="table-row"><span>Daily Planner</span><span>$16</span><span>31</span></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <span class="tag">Mock sample · Admin</span>
+          <h3>Appointment Tracker</h3>
+          <p>Simple scheduling and follow-up system designed for visibility and organization.</p>
+          <div class="mockup">
+            <div class="mock-title">APPOINTMENT TRACKER</div>
+            <div class="appointment">
+              <div><strong>Client</strong>Jane Smith</div>
+              <div><strong>Time</strong>10:30 AM</div>
+              <div><strong>Service</strong>Consultation</div>
+              <div><strong>Status</strong>Confirmed</div>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Portfolio note:</strong> The projects above are self-created mock samples for demonstration purposes.
+        They are not presented as completed client work.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-number">05 · Development</div>
+          <h2>Continuing to build remote-work skills.</h2>
+        </div>
+        <p>Professional development can be updated as new training and certifications are completed.</p>
+      </div>
+
+      <div class="education">
+        <div class="card">
+          <h3>Education</h3>
+          <p class="muted"><strong>Bachelor of Science in Hospitality Management</strong></p>
+        </div>
+        <div class="card">
+          <h3>Professional Development</h3>
+          <p class="muted">
+            Ongoing development in Virtual Assistant skills, remote customer support,
+            e-commerce assistance, productivity tools, documentation, and online work practices.
+          </p>
+          <p class="muted"><em>Certifications can be added to this section as they are finalized.</em></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="section-number">06 · Contact</div>
+          <h2>Let's connect about remote support work.</h2>
+        </div>
+        <p>
+          Available for Virtual Assistant, customer service, administrative,
+          and related online opportunities.
+        </p>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-item">
+          <span>Email</span>
+          <a href="mailto:banessajanesotelo@gmail.com">banessajanesotelo@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span>Phone</span>
+          <a href="tel:+639350983512">0935 098 3512</a>
+        </div>
+        <div class="contact-item">
+          <span>LinkedIn</span>
+          <a href="https://www.linkedin.com/in/banessajanesotelo" target="_blank" rel="noopener">linkedin.com/in/banessajanesotelo</a>
+        </div>
+        <div class="contact-item">
+          <span>OnlineJobs.ph</span>
+          <a href="https://www.onlinejobs.ph/jobseekers/info/1505300" target="_blank" rel="noopener">OnlineJobs.ph profile</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">© 2026 Banessa Jane Sotelo · Virtual Assistant Portfolio</div>
+</footer>
+</body>
+</html>
